@@ -1,0 +1,18 @@
+version: "3.10"
+
+services:
+    backend:
+        build:
+            context: ./iot-backend
+        container_name: iot-backend
+        ports:
+            - "8000:8000"
+        command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+    frontend:
+        build:
+            context: ./iot-frontend
+        container_name: iot-frontend
+        ports:
+            - "8501:8501"
+        command: streamlit run dashboard.py --server.port=8501 --server.enableCORS=false

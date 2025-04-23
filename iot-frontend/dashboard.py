@@ -14,7 +14,7 @@ import streamlit as st
 import requests
 
 # Define your API URL (Backend FastAPI URL)
-API_URL = "http://localhost:8000"  # Change this if using a remote backend
+API_URL = "http://iot-backend:8000"  # Change this if using a remote backend
 
 # Streamlit UI Title
 st.title("IoT Smart Home Dashboard")
